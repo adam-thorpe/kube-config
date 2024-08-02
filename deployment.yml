@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mock-app-deployment
+  name: mock-app
   labels:
     app: mock-app
 spec:
@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mock-app-service
+  name: mock-app
   labels:
     app: mock-app
 spec:
