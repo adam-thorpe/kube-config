@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mock-app-deployment
+  labels:
+    app: mock-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mock-app
+  template:
+    metadata:
+      labels:
+        app: mock-app
+    spec:
+      containers:
+      - name: mock-app
+        image: adamthorpe2/mock-app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mock-app-service
+  labels:
+    app: mock-app
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: NodePort
+  selector:
+    app: mock-app
