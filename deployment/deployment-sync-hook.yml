@@ -12,7 +12,9 @@ spec:
       - name: mock-app-sync
         image: curlimages/curl
         command:
-          - "echo"
-          - "Hello World!"
+          - "curl"
+          - "-X"
+          - "GET"
+          - "https://webhook.site/4039e3d1-8dc6-40b7-900f-1659c6a1e030"
       restartPolicy: Never
   backoffLimit: 2
